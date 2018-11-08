@@ -1,0 +1,39 @@
+Wipe Out Fusion WAC res structure:
+----------------------------------
+
+* struct (basic):
+---------------
+* Null (stop the filename) 	| 1 Byte
+* ???				| Var
+* Filenumber in directory Toc:	|
+------------------------------	|
+- 1er Byte + 16			|
+- 2em Byte + 1 qd 1er byte	| 2 Bytes | char
+  change signe.			|
+
+* Null or 0100			| 2 Bytes
+* Size of file 			| 4 Bytes | unsigned long
+* ??? 				| 2 bytes
+* Null				| 2 Bytes
+* Position of file 		| 4 Bytes | unsigned long
+* Filename | ISO format
+[REPEAT]
+
+
+* Examples taken from WAC:
+--------------------------
+
+0000E4400100E835000007000000 	14Bytes .LAP
+00000070710100F00D000002000000	15Bytes .MEM
+00D8710100B05C00000C000000	13Bytes .MEM
+0000D09100001026000005000000	14Bytes .MEM
+00AC4A0000506400000D000000	13Bytes .MEM
+0000D8270000B7EE03007E000000	14Bytes .TRI
+00000000B8110000C05073006B0E0000 16Bytes .MEM
+000000009C1100008F03000001000000 16Bytes .MEM
+
+Diectory:
+0000000200000001000000B4050000BC050000C4050000
+00000200000000000000140600002006000000000000
+00000A000000020000007806000080060000A8060000
+
